@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="icon" href="images/bookmark.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="javascript/bootstrap.bundle.js"></script> 
+</head>
+<body>
+     <header class="my-5 w-80 m-auto d-flex justify-content-center">
+         <h1>Bookmarker</h1>
+     </header>
+     <section>
+         <div class="section-caption w-80 m-auto d-flex flex-column" >
+             <h2 class="align-self-center my-4"><i class="fa-solid fa-bookmark"></i>
+                Bookmark your favorite sites
+                <i class="fa-solid fa-bookmark"></i></h2>
+    
+             <label for="bookmarkName" class="my-2 fw-bold">
+                <i class="fa-solid fa-book-bookmark me-2"></i>Site Name</label>
+             <input type="text" placeholder="Bookmark Name" id="bookmarkName" class="form-control">
+
+             <label for="bookmarkUrl" class="my-2 fw-bold mt-4">
+                <i class="fa-solid fa-link me-2"></i>Site URL</label>
+             <input type="text" placeholder="Website URL" id="bookmarkUrl" class="form-control">
+
+             <button class="btn px-5 my-4 d-block mx-auto" id="submitBtn" onclick="submit()">Submit</button>
+         </div>
+     </section>
+
+     <table class="w-80 mx-auto bg-light text-center my-5">
+        <thead>
+            <tr>
+                <th class="py-2">Index</th>
+                <th>Website Name</th>
+                <th>Visit</th>
+                <th>Delete</th>
+            </tr class="ms-auto">
+        </thead>
+       <tbody id="tableContent">
+            <!-- <tr class="border border-start-0 border-end-0">
+               <td class="py-3">1</td>
+               <td class="">Facebook</td>
+               <td><button id="visitBtn" class="border-0"><a href="" class="btn btn-green text-light" target="_blank"><i class="fa-solid fa-eye me-2"></i>Visit</a></button></td>
+               <td><button id="deleteBtn" class="btn btn-red text-light" onclick="deleteSite(i)"><i class="fa-solid fa-trash-can me-2"></i>Delete</button></td>
+            </tr>  -->
+        </tbody>
+     </table>
+
+
+   <script src="javascript/script.js"></script>
+</body>
+</html>
