@@ -11,18 +11,28 @@ if(localStorage.getItem("websitesArray") != null){
 
 
 function submit() {
+    var name = websiteName.value;
     var url = websiteUrl.value;
+
+    if (name === "" || url === "") {
+        errorMessage.classList.remove('d-none');
+        errorMessage.classList.add('d-block');
+        return;
+    } else {
+        errorMessage.classList.remove('d-block');
+        errorMessage.classList.add('d-none');
+    }
     if (!url.startsWith('http://') && !url.startsWith('https://')) {
-        url = 'http://' + url;
+        url = 'https://' + url;
     }
     var newWebsite = {
-        name: websiteName.value,
+        name: name,
         url: url
-    }
+    };
     websitesArray.push(newWebsite);
-    updateTable ();
+    updateTable();
     clear();
-    localStorageUpdate()
+    localStorageUpdate();
 }
 
 function updateTable (){
@@ -48,7 +58,6 @@ function deleteSite(index) {
     updateTable();
     localStorageUpdate()
 }
-
 
 function localStorageUpdate() {
      localStorage.setItem("websitesArray", JSON.stringify(websitesArray));
